@@ -1,0 +1,7 @@
+scrapy 
+nltk 
+sentence-transformers 
+pymilvus 
+elasticsearch 
+transformers 
+streamlit
