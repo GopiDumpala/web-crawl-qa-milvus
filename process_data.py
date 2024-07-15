@@ -1,4 +1,4 @@
-# src/process_data.py
+# process_data.py
 
 import json
 import nltk
