@@ -3,13 +3,13 @@ from scrapy.crawler import CrawlerProcess
 
 class CudaDocSpider(scrapy.Spider):
     name = "cuda_docs"
-    start_urls = ['https://docs.nvidia.com/cuda/']
+    start_urls = ['https://docs.nvidia.com/cuda/']        # replace the link if you want to do crawelling on another site
 
     def parse(self, response):
         content = response.css('body').getall()
         yield {'url': response.url, 'content': content}
 
-        if response.meta.get('depth', 0) < 5:
+        if response.meta.get('depth', 0) < 5:             # by changeing this number you can modify depth of the crawler EX 5,4,3
             next_links = response.css('a::attr(href)').getall()
             for link in next_links:
                 yield response.follow(link, self.parse, meta={'depth': response.meta.get('depth', 0) + 1})
