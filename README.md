@@ -33,17 +33,17 @@ This project involves developing a web crawler that scrapes data from the NVIDIA
 
 1. **Web Crawling**: Run the crawler to scrape data:
     ```sh
-    python src/cuda_crawler.py
+    python cuda_crawler.py
     ```
 
 2. **Data Processing**: Process the scraped data and create embeddings:
     ```sh
-    python src/process_data.py
+    python process_data.py
     ```
 
 3. **Run Streamlit App**: Start the Streamlit app to search the CUDA documentation:
     ```sh
-    streamlit run src/app.py
+    streamlit run app.py
     ```
 
 ## License
