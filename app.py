@@ -1,9 +1,7 @@
-# src/app.py
-
+import openai
 import streamlit as st
 import json
 from sentence_transformers import SentenceTransformer, CrossEncoder
-from transformers import pipeline
 from elasticsearch import Elasticsearch
 import numpy as np
 
@@ -18,7 +16,6 @@ contents = data['contents']
 # Initialize models
 model = SentenceTransformer('all-MiniLM-L6-v2')
 cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-12-v2')
-qa_pipeline = pipeline("question-answering")
 
 # Connect to Elasticsearch
 es = Elasticsearch()
@@ -59,5 +56,13 @@ if query:
     scores = cross_encoder.predict(pairs)
     sorted_docs = [doc for _, doc in sorted(zip(scores, retrieved_docs), reverse=True)]
     context = " ".join(sorted_docs[:5])
-    result = qa_pipeline(question=query, context=context)
-    st.write(f"Q: {query}\nA: {result['answer']}")
+
+    # Use GPT-3 for question answering
+    openai.api_key = 'YOUR_OPENAI_API_KEY'       # replace with your OPENAI API KEY
+    response = openai.Completion.create(
+        engine="davinci",
+        prompt=f"Answer the question based on the context:\n\nContext: {context}\n\nQuestion: {query}\nAnswer:",
+        max_tokens=150
+    )
+    answer = response.choices[0].text.strip()
+    st.write(f"Q: {query}\nA: {answer}")
