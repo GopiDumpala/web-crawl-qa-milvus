@@ -15,7 +15,7 @@ This project involves developing a web crawler that scrapes data from the NVIDIA
 1. Clone the repository:
     ```sh
     git clone https://github.com/GopiDumpala/cuda-docs-webcrawler.git
-    cd cuda-docs-webcrawler
+    cd web-crawl-qa-milvus
     ```
 
 2. Create and activate a virtual environment (optional but recommended):
