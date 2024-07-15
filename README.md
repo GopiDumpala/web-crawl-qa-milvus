@@ -45,6 +45,9 @@ This project involves developing a web crawler that scrapes data from the NVIDIA
     ```sh
     streamlit run app.py
     ```
+**OPAN AI API KEY:**
+if you don't have open ai api key please sign in and get the key from below link
+https://platform.openai.com/account/api-keys
 
 ## License
 
