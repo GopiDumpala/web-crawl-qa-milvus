@@ -35,6 +35,7 @@ This project involves developing a web crawler that scrapes data from the NVIDIA
     ```sh
     python cuda_crawler.py
     ```
+    i am not adding (cuda_docs.json and embeddings_data.json) files in this code. these are big file need more time to follow anoher method . i will add them soon
 
 2. **Data Processing**: Process the scraped data and create embeddings:
     ```sh
