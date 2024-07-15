@@ -1,4 +1,4 @@
-# CUDA Docs Web Crawler and Search
+# Web Crawler and Qa from vectordatabase(milvus) by using llm
 
 ## Overview
 
@@ -14,7 +14,7 @@ This project involves developing a web crawler that scrapes data from the NVIDIA
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/cuda-docs-webcrawler.git
+    git clone https://github.com/GopiDumpala/cuda-docs-webcrawler.git
     cd cuda-docs-webcrawler
     ```
 
